@@ -16,7 +16,7 @@ from dotenv import dotenv_values
 config = dotenv_values(".env")
 Base = declarative_base()
 app = Flask(__name__)
-app.config['SECRET_KEY'] = config["app_config_key"]
+app.config['SECRET_KEY'] = 'NIjPhvbC6jetYTW2UPT2fBXZ56DKYfUe'
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
