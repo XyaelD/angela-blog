@@ -13,6 +13,7 @@ from flask_gravatar import Gravatar
 from functools import wraps
 from dotenv import dotenv_values
 from boto.s3.connection import S3Connection
+import psycopg2
 import os
 
 Base = declarative_base()
@@ -22,7 +23,7 @@ ckeditor = CKEditor(app)
 Bootstrap(app)
 
 # CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL', "sqlite:///blog.db"]
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
