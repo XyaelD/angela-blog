@@ -1,4 +1,4 @@
-boto.s3.connection
+boto
 certifi
 chardet
 click

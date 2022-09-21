@@ -15,10 +15,9 @@ from dotenv import dotenv_values
 from boto.s3.connection import S3Connection
 import os
 
-secret_key = S3Connection(os.environ['APP_CONFIG_KEY'])
 Base = declarative_base()
 app = Flask(__name__)
-app.config['SECRET_KEY'] = secret_key
+app.config['SECRET_KEY'] = S3Connection(os.environ['APP_CONFIG_KEY'])
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
