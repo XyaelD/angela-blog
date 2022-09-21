@@ -17,7 +17,7 @@ import os
 
 Base = declarative_base()
 app = Flask(__name__)
-app.config['SECRET_KEY'] = S3Connection(os.environ['APP_CONFIG_KEY'])
+app.config['SECRET_KEY'] = os.environ['APP_CONFIG_KEY']
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
