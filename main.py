@@ -12,11 +12,13 @@ from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 from flask_gravatar import Gravatar
 from functools import wraps
 from dotenv import dotenv_values
+from boto.s3.connection import S3Connection
+import os
 
-config = dotenv_values(".env")
+secret_key = S3Connection(os.environ['APP_CONFIG_KEY'])
 Base = declarative_base()
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'NIjPhvbC6jetYTW2UPT2fBXZ56DKYfUe'
+app.config['SECRET_KEY'] = secret_key
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
